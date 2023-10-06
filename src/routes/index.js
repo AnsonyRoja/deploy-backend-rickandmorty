@@ -37,7 +37,7 @@ router.get('/fav', (req, res) => {
 
 })
 
-router.get('/character/:name', (req, res) => {
+router.get('/character/name/:name', (req, res) => {
 
     getCharByName(req, res);
 
