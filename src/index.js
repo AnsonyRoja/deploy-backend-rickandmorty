@@ -5,6 +5,8 @@ const server = express();
 const router = require('./routes/index');
 const PORT = 3001;
 const morgan = require("morgan");
+const { createUser } = require('./horcoded/users');
+
 // la informacion que me pasan en formato json, este middleware la pasa a objeto de javascript para que yo pueda trabajar
 server.use(express.json());
 server.use(morgan('dev'));
@@ -26,7 +28,7 @@ server.use((req, res, next) => {
 
 server.use('/rickandmorty', router);
 // conn.sync({ force: true }).then(() => {
-conn.sync().then(() => {
+conn.sync({ force: true }).then(() => {
 
 
     server.listen(PORT, () => {
@@ -34,6 +36,8 @@ conn.sync().then(() => {
         console.log(`Server raised in port: ${PORT}`);
 
     });
+
+    createUser();
 
 });
 
