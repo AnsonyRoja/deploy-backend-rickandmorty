@@ -3,7 +3,7 @@ const getCharById = require('../controllers/getCharById');
 const postFav = require('../controllers/postFav');
 const postUser = require('../controllers/postUser');
 const deleteFav = require('../controllers/deleteFav');
-
+const getFav = require('../controllers/getFav');
 
 const router = require("express").Router();
 
@@ -30,5 +30,10 @@ router.delete('/fav/:id', (req, res) => {
     deleteFav(req, res);
 })
 
+router.get('/fav', (req, res) => {
+
+    getFav(req, res);
+
+})
 
 module.exports = router;
