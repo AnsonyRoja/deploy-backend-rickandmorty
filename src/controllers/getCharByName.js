@@ -8,7 +8,10 @@ const getCharByName = async (req, res) => {
 
     const { name } = req.params;
 
+    console.log(name);
+
     try {
+
 
         const response = await axios.get(`${URL}/?name=${name}`)
 
