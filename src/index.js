@@ -28,7 +28,7 @@ server.use((req, res, next) => {
 
 server.use('/rickandmorty', router);
 // conn.sync({ force: true }).then(() => {
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
 
 
     server.listen(PORT, () => {
